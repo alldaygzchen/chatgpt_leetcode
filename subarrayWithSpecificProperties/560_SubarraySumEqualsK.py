@@ -14,7 +14,7 @@ class Solution:
         count = 0
 
         for r in range(len(nums)):
-            # out of bounds prevent double counting
+            # itself is k
             if nums[r] == k:
                 count += 1
             # check different subarrays current_sum = nums[l] + nums[l+1] + ... + nums[r]
@@ -30,13 +30,14 @@ class Solution:
         return count
 
     # try to add some data structure to optimize the time complexity
+    # hashmap is efficient to retrieve information about all prefices
     def subarraySum(self, nums: List[int], k: int) -> int:
 
         # the output
         count = 0
-
-
+        # the record
         sum_dict = {}
+        
         cummulative_sum = 0
 
         for r in range(len(nums)):

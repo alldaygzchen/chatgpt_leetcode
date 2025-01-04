@@ -1,3 +1,10 @@
+
+"""
+## Problem: Other
+# Create a dictionary with the key of reviewed and the value of index
+"""
+
+
 from typing import List
 class Solution:
     def twoSum_bf(self, nums: List[int], target: int) -> List[int]:
@@ -7,9 +14,11 @@ class Solution:
                 if nums[l] + nums[r] == target:
                     return [l,r]
                 
-    # try to add some data structure to optimize the time complexity            
+    # try to add some data structure to optimize the time complexity 
+    # hashmap is efficient to retrieve information about all elements up to the current element          
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # the output
+        
+        # the record
         sum_dict = {}
         
         for r in range(len(nums)):
