@@ -16,13 +16,18 @@ class Solution:
             return 0
 
         for r in range(len(s)):
+            # itself
+            max_len = max(max_len, 1)
             for l in range(0,r):
                 char_st =set()
+                continue_flag = True
                 for i in range(l, r):
                     if s[i] in char_st:
                         max_len = max(max_len, len(char_st))
+                        continue_flag = False
                         break
                     char_st.add(s[i])
+                if continue_flag:
                     if s[r] in char_st:
                         max_len = max(max_len, len(char_st))
                     else:
@@ -75,3 +80,4 @@ sol = Solution()
 print(sol.lengthOfLongestSubstring("abcabcbb")) # 3
 print(sol.lengthOfLongestSubstring("bbbbb")) # 1
 print(sol.lengthOfLongestSubstring("pwwkew")) # 3
+# print(sol.lengthOfLongestSubstringBf("ckilbkd")) #5
