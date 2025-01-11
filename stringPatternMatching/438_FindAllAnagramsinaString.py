@@ -30,9 +30,14 @@ class Solution:
                 char_count_dict_s[s[r]] += 1
             else:
                 char_count_dict_s[s[r]] = 1
-            
+
+            # Check if char_count_dict of p equals char_count_dict of s
+            if (char_count_dict_s == char_count_dict_p):
+                result.append(l)
+
+
             # Check r-l+1 > len(p)
-            if r-l+1 > len(p):
+            if r-l+1 == len(p):
                 
                 # remove the left value from char_count_dict of s
                 # check value of char_count_dict of s is zero, remove the key
@@ -44,9 +49,6 @@ class Solution:
                 # update l      
                 l+=1
             
-            # Check if char_count_dict of p equals char_count_dict of s and r-l+1 == len(p)
-            if (char_count_dict_s == char_count_dict_p) and (r-l+1) == len(p):
-                result.append(l)
         return result
 
 
